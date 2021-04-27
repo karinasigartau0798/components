@@ -15,12 +15,6 @@ jobs:
         uses: actions/github-script@v4
         with:
           script: |
-            github.pullRequests.createReview({
-              owner: context.repo.owner,
-              repo: context.payload.repository.name,
-              pull_number: context.payload.pull_request.number,
-              event: 'APPROVE'
-            })
             github.pullRequests.merge({
               owner: context.repo.owner,
               repo: context.payload.repository.name,
